@@ -1,0 +1,29 @@
+body {
+    font-family: Courier New, Courier, monospace;
+    background-color: #ddd;
+    padding: 20px 0 0 50px;
+}
+
+#counter {
+    padding: 20px 0;
+    transition-duration: 0.4s;
+}
+
+button {
+    background-color: blue;
+    border: 2px solid blue;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #ddd;
+    border: 2px solid blue;
+    color: black;
+}
