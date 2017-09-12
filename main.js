@@ -5,6 +5,7 @@
 let secondsLabel = document.getElementById("counter");
 let buttonTen = document.getElementById("button-ten");
 let justWait = document.getElementById("just-wait");
+let dontPanic = document.getElementById("dont-panic");
 let totalSeconds = 0;
 let periods = "";
 
@@ -18,6 +19,8 @@ function setTime(){
 
     ++totalSeconds;
     secondsLabel.innerHTML = pad(totalSeconds);
+    dontPanic.innerHTML = pad(totalSeconds) + " -- Don't Panic!";
+    
 
     // button appears when counter reaches 10
     if (totalSeconds == 10) {
@@ -47,5 +50,7 @@ function justPeriods() {
         periods = "";
     }
 }
+
+// button makes +10 to counter on click?
 
 
