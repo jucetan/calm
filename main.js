@@ -1,3 +1,7 @@
+/*
+@jucetan
+*/
+
 let secondsLabel = document.getElementById("counter");
 let buttonTen = document.getElementById("button-ten");
 let justWait = document.getElementById("just-wait");
