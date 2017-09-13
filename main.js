@@ -6,6 +6,7 @@ let secondsLabel = document.getElementById("counter");
 let buttonTen = document.getElementById("button-ten");
 let justWait = document.getElementById("just-wait");
 let dontPanic = document.getElementById("dont-panic");
+let tenButton = document.getElementsByClassName("a-ten-button");
 let totalSeconds = 0;
 let periods = "";
 
@@ -15,12 +16,12 @@ setInterval(setTime, 1000);
 
 
 // sets the timer element
-function setTime(){
+function setTime() {
 
     ++totalSeconds;
     secondsLabel.innerHTML = pad(totalSeconds);
     dontPanic.innerHTML = pad(totalSeconds) + " -- Don't Panic!";
-    
+
 
     // button appears when counter reaches 10
     if (totalSeconds == 10) {
@@ -29,11 +30,11 @@ function setTime(){
 }
 
 // adds the 0 infront of single length numbers to keep it uniform.
-function pad(val){
+function pad(val) {
 
-        let valString = val + "";
+    let valString = val + "";
 
-        if(valString.length < 2){
+    if (valString.length < 2) {
         return "0" + valString;
     } else {
         return valString;
@@ -41,16 +42,31 @@ function pad(val){
 }
 
 // animates the 3 periods after just wait...
-function justPeriods() {    
-    justWait.innerHTML = "<p>" + "Just wait for it" + periods + "</p>";
+function justPeriods() {
+    justWait.innerHTML = "<p>" + "Just wait for it" + periods + "</p>" + "<p>--</p>";
 
     if (periods.length <= 2) {
-        periods += ".";    
+        periods += ".";
     } else {
         periods = "";
     }
 }
 
-// button makes +10 to counter on click?
+// vanilla JS that makes dynamicly generated dom elements to be usuable.
+/*
 
+function live (eventType, elementId, cb) {
+    document.addEventListener(eventType, function (event) {
+        var el = event.target
+            , found;
 
+        while (el && !(found = el.id === elementId)) {
+            el = el.parentElement;
+        }
+
+        if (found) {
+            cb.call(el, event);
+        }
+    });
+}
+*/
