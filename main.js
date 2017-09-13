@@ -2,17 +2,24 @@
 @jucetan
 */
 
-let secondsLabel = document.getElementById("counter");
-let buttonTen = document.getElementById("button-ten");
-let justWait = document.getElementById("just-wait");
-let dontPanic = document.getElementById("dont-panic");
-let tenButton = document.getElementsByClassName("a-ten-button");
+let secondsLabel;
+let buttonTen ;
+let justWait;
+let dontPanic;
+let tenButton;
 let totalSeconds = 0;
 let periods = "";
 
+window.onload = function() {
+  secondsLabel  = document.getElementById("counter");
+ buttonTen = document.getElementById("button-ten");
+justWait = document.getElementById("just-wait");
+ dontPanic = document.getElementById("dont-panic");
+}
+
 // ** Interval Calls **
 setInterval(justPeriods, 1000);
-setInterval(setTime, 1000);
+let secondsOfTime = setInterval(setTime, 1000);
 
 
 // sets the timer element
@@ -26,6 +33,8 @@ function setTime() {
     // button appears when counter reaches 10
     if (totalSeconds == 10) {
         buttonTen.innerHTML += "<p>--</p>" + "<p>Hey, you reached 10! Have a button.</p>" + "<button class=\"a-ten-button\">* 10 BUTTON *</button>";
+            addEventListeners();
+
     }
 }
 
@@ -52,21 +61,16 @@ function justPeriods() {
     }
 }
 
-// vanilla JS that makes dynamicly generated dom elements to be usuable.
-/*
+function addEventListeners() {
+    
+    tenButton = document.getElementsByClassName("a-ten-button")[0];
 
-function live (eventType, elementId, cb) {
-    document.addEventListener(eventType, function (event) {
-        var el = event.target
-            , found;
+// button injects 10 seconds to the counter.
+    tenButton.addEventListener("mousedown", function(){
 
-        while (el && !(found = el.id === elementId)) {
-            el = el.parentElement;
-        }
+        totalSeconds += 10;
+        secondsLabel.innerHTML = pad(totalSeconds);
+    })
 
-        if (found) {
-            cb.call(el, event);
-        }
-    });
 }
-*/
+
