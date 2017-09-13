@@ -1,12 +1,13 @@
 body {
     font-family: Courier New, Courier, monospace;
+    font-size: 1em;
     background-color: #ddd;
     padding: 20px 0 0 50px;
 }
 
 #counter {
-    padding: 20px 0;
-    transition-duration: 0.4s;
+    padding: 10px 0;
+    transition0-duration: 0.4s;
 }
 
 button {
@@ -18,8 +19,10 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 11px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
     transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 button:hover {
