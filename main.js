@@ -1,9 +1,9 @@
 /*
 @jucetan
 */
-
+"use strict"
 let secondsLabel;
-let buttonTen ;
+let buttonTen;
 let justWait;
 let dontPanic;
 let tenButton;
@@ -11,10 +11,10 @@ let totalSeconds = 0;
 let periods = "";
 
 window.onload = function() {
-  secondsLabel  = document.getElementById("counter");
- buttonTen = document.getElementById("button-ten");
-justWait = document.getElementById("just-wait");
- dontPanic = document.getElementById("dont-panic");
+    secondsLabel = document.getElementById("counter");
+    buttonTen = document.getElementById("button-ten");
+    justWait = document.getElementById("just-wait");
+    dontPanic = document.getElementById("dont-panic");
 }
 
 // ** Interval Calls **
@@ -33,7 +33,7 @@ function setTime() {
     // button appears when counter reaches 10
     if (totalSeconds == 10) {
         buttonTen.innerHTML += "<p>--</p>" + "<p>Hey, you reached 10! Have a button.</p>" + "<button class=\"a-ten-button\">* 10 BUTTON *</button>";
-            addEventListeners();
+        addEventListeners();
 
     }
 }
@@ -62,15 +62,14 @@ function justPeriods() {
 }
 
 function addEventListeners() {
-    
+
     tenButton = document.getElementsByClassName("a-ten-button")[0];
 
-// button injects 10 seconds to the counter.
-    tenButton.addEventListener("mousedown", function(){
+    // button injects 10 seconds to the counter.
+    tenButton.addEventListener("mousedown", function() {
 
         totalSeconds += 10;
         secondsLabel.innerHTML = pad(totalSeconds);
     })
 
 }
-
